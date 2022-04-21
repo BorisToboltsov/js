@@ -14,10 +14,12 @@ const getProductHTMLString = (title, price) => {
 };
 
 const renderProducts = (productList) => {
-  const list = productList.map((good) => getProductHTMLString(good.title, good.price));
+    const list = productList.map((good) => getProductHTMLString(good.title, good.price));
+    let doc = document.querySelector('.products');
 
-  document.querySelector('.products').innerHTML = list;
-    // console.log(list);
+    for (let i = 0; i < list.length; i++) {
+        doc.insertAdjacentHTML('beforeend', list[i]);
+    }
 }
 
 renderProducts(products);
