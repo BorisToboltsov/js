@@ -5,7 +5,7 @@ const products = [
     {id: 4, title: 'Gamepad', price: 150},
 ];
 
-const getProductHTMLString = (title, price) => {
+const getProductHTMLString = (title = 'Товар ожидается', price = 0) => {
     return `<div class="product-item">
                 <h3>${title}</h3>
                 <p>${price}</p>
